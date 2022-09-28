@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/*
+/**
  * main - checks wether a rnd is possitive or negative
  *
  * Return: zero

@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - Prints the alphabet
+ * main - Prints the alphabet w/o q&e
  *
  * Return: 0
  */

@@ -29,6 +29,6 @@ int main(void)
 		strcpy(s, "and is less than 6 and not 0\n");
 	}
 
-	printf("The last digit of %d is %d %s", n, lst, s);
+	printf("Last digit of %d is %d %s", n, lst, s);
 	return (0);
 }

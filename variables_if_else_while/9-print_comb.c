@@ -19,5 +19,6 @@ int main(void)
 		}
 		c = 44;
 	}
+	putchar(' ');
 	return (0);
 }

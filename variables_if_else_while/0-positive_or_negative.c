@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 /* more headers goes there */
@@ -6,7 +7,7 @@
  *
  * Return: zero
  */
-main(void)
+int main(void)
 {
 	int n;
 

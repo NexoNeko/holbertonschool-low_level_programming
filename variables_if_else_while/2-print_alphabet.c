@@ -2,6 +2,7 @@
 /**
  * main - Prints the alphabet
  *
+ * Return: 0
  */
 int main(void)
 {
@@ -13,4 +14,5 @@ int main(void)
 		a++;
 	}
 	putchar('\n');
+	return (0);
 }

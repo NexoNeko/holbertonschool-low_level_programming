@@ -3,15 +3,15 @@
 /**
  * main - prints a string using puts
  *
- *@str: the character array (string) to be printed.
+ *Return: 0
  */
-int main (void)
+int main(void)
 {
 	char str[52];
 
-	strcpy(str, "\"Programming is like building a multilingual puzzle");
+	strcpy (str, "\"Programming is like building a multilingual puzzle");
 
-	puts(str);
+	puts (str);
 
 	return(0);
 }

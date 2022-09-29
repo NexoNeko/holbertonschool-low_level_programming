@@ -1,1 +1,1 @@
-This is my second day dealing with C, it's fun
+Second day exercises.

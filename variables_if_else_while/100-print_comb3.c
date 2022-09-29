@@ -6,10 +6,18 @@
  */
 int main(void)
 {
-	int a = 48, b = 48, c;
+	int a = 48, b = 49, c;
 
 	while (b < 58)
 	{
+		if (a == 57)
+		{
+			a--;
+			b = b + 8;
+			putchar(a);
+			putchar(b);
+			return (0);
+		}
 		putchar(a);
 		putchar(b);
 		c = 44;
@@ -24,7 +32,7 @@ int main(void)
 		}
 		if (b >= 57 && a < b)
 		{
-			b = b - 9;
+			b = b - 8;
 			a++;
 		}
 		else

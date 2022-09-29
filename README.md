@@ -1,3 +1,1 @@
-This readme contains a line.
-This folder will contain exercises for my second
-week at holberton school.
+First week of C @ holberton school.

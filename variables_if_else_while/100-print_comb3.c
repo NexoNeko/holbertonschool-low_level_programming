@@ -10,6 +10,10 @@ int main(void)
 
 	while (b < 58)
 	{
+		if (a == b && a < 57)
+		{
+			b++;
+		}
 		if (a == 57)
 		{
 			a--;
@@ -25,10 +29,6 @@ int main(void)
 		{
 			putchar(c);
 			c = c - 12;
-		}
-		if (a == b && a < 57)
-		{
-			b++;
 		}
 		if (b >= 57 && a < b)
 		{

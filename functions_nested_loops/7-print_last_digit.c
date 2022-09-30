@@ -10,6 +10,6 @@
 int print_last_digit(int i)
 {
 	i = i % 10;
-	_putchar(i);
-	return(0);
+	_putchar('0' + i);
+	return (0);
 }

@@ -5,10 +5,10 @@
  *
  * @i: The num to be cut
  *
- * Return: i
+ * Return: void
  */
 int print_last_digit(int i)
 {
 	i = i % 10;
-	return (i);
+	_putchar(i);
 }

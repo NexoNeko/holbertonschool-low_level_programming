@@ -1,12 +1,12 @@
 /**
- *_islower - checks wether the char is lowercase or not
+ * _islower - checks wether the char is lowercase or not
  *
  *
- *@c: The char to be tested
+ * @c: The char to be tested
  *
  * Return: 0 or 1
  */
-int_islower(int c);
+int _islower(int c)
 {
 	if (c == 99)
 	{

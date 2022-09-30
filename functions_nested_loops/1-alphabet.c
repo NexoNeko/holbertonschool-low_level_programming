@@ -1,3 +1,4 @@
+#include "putchar.c"
 /**
  * print_alphabet - Prints the alphabet
  *

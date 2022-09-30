@@ -1,7 +1,9 @@
 /**
- * print_aphabet - Prints the alphabet
+ * print_alphabet - Prints the alphabet
  *
  * _putchar - prints a character to stdout
+ *
+ *@c: the character to be printed
  *
  * Return: Character
  */

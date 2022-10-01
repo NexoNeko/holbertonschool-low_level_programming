@@ -9,10 +9,15 @@ int _putchar (char c);
 void jack_bauer(void)
 {
 	int h, m, d, s;
+	int i = 9;
 
 	for (h = 0; h <= 2; h++)
 	{
-		for (m = 0; m <= 3; m++)
+		if (h > 1)
+		{
+			i = 3;
+		}
+		for (m = 0; m <= i; m++)
 		{
 			for (d = 0; d <= 5; d++)
 			{

@@ -18,8 +18,8 @@ void times_table(void)
 			r = (a * b);
 			if (a == 0 && b != 9 && b != 0)
 			{
-				_putchar('.');
-				_putchar('.');
+				_putchar(' ');
+				_putchar(' ');
 			}
 			if (r == 0 && b != 9)
 			{
@@ -30,13 +30,13 @@ void times_table(void)
 			{
 				if (r <= 9)
 				{
-					_putchar('.');
-					_putchar('.');
+					_putchar(' ');
+					_putchar(' ');
 					_putchar(r + 48);
 				}
 				else
 				{
-					_putchar('.');
+					_putchar(' ');
 					_putchar((r / 10) + 48);
 					_putchar((r % 10) + 48);
 				}

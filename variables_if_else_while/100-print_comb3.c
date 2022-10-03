@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int i, ten, dig, a, ntn, b;
+	int i, ten, dig, a, ntn;
 
 	for (i = 1; i < 100; i++)
 	{

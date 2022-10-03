@@ -20,7 +20,7 @@ int main(void)
 			putchar(a);
 			a = i % 10 + 48;
 			putchar(a);
-			if ((i / 10) = 8)
+			if ((i / 10) == 8)
 			{
 				putchar('\n');
 				return(0);

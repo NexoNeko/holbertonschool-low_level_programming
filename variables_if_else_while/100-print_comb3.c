@@ -6,38 +6,27 @@
  */
 int main(void)
 {
-	int a = 48, b = 49, c;
+	int i, ten, dig, a, ntn, b;
 
-	while (b < 58)
+	for (i = 1; i < 100; i++)
 	{
-		if (a == b && a < 57)
+		dig = i / 10;
+		ten = dig * 10;
+		ntn = ten + 10;
+
+		if (i > ten + dig && i < ntn)
 		{
-			b++;
-		}
-		if (a == 57)
-		{
-			a--;
-			b = b + 8;
+			a = i / 10 + 48;
 			putchar(a);
-			putchar(b);
-			return (0);
-		}
-		putchar(a);
-		putchar(b);
-		c = 44;
-		while (c >= 32)
-		{
-			putchar(c);
-			c = c - 12;
-		}
-		if (b >= 57 && a < b)
-		{
-			b = b - 8;
-			a++;
-		}
-		else
-		{
-			b++;
+			a = i % 10 + 48;
+			putchar(a);
+			if ((i / 10) = 8)
+			{
+				putchar('\n');
+				return(0);
+			}
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	return (0);

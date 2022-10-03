@@ -23,7 +23,7 @@ int main(void)
 			if ((i / 10) == 8)
 			{
 				putchar('\n');
-				return(0);
+				return (0);
 			}
 			putchar(',');
 			putchar(' ');

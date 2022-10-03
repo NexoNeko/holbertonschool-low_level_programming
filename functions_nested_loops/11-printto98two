@@ -1,0 +1,47 @@
+#include "main.h"
+/**
+ * print_to_98 - prints from a to 98 \n.
+ *
+ * @c: Value to be printed on screen
+ *
+ * Return: void
+ */
+int _putchar (char c);
+void print_to_98(int a)
+{
+	int b = 98;
+
+	if (a > 98)
+	{
+	}
+	else
+	{
+	while (a < b)
+	{
+		if (a > 9 && a != 0)
+		{
+			_putchar((a / 10) + 48);
+			_putchar((a % 10) + 48);
+		}
+		else if (a < 0)
+		{
+			_putchar('-');
+			if ((a / -1) > 9)
+			{
+				_putchar(((a / -1) / 10) + 48);
+				_putchar(((a / -1) % 10) + 48);
+			}
+			else
+				_putchar((a / -1) + 48);
+		}
+		else
+			_putchar(a + 48);
+		_putchar(',');
+		_putchar(' ');
+		a++;
+	}
+	_putchar((a / 10) + 48);
+	_putchar((a % 10) + 48);
+	_putchar('\n');
+	}
+}

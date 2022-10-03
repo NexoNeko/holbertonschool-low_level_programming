@@ -1,2 +1,4 @@
+all: school
+
 school:
 	gcc school.c -o school

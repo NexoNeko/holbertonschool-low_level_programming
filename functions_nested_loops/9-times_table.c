@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * times_table - prints all the times tables
  *
@@ -14,28 +15,39 @@ void times_table(void)
 	{
 		for (b = 0; b <= 9; b++)
 		{
-			r = a * b;
-			if (r >= 10)
+			r = (a * b);
+			if (a == 0 && b != 9 && b != 0)
 			{
-				_putchar((r / 10) + 48);
-				_putchar((r % 10) + 48);
+				_putchar('.');
+				_putchar('.');
 			}
-			else
+			if (r == 0 && b != 9)
 			{
 				_putchar(r + 48);
-			}
-			if (b == 9)
-			{
-				_putchar('\n');
+				_putchar(',');
 			}
 			else
 			{
-				_putchar(',');
-				_putchar(' ');
-			}
-			if (r < 10 && b < 9)
-			{
-				_putchar (' ');
+				if (r <= 9)
+				{
+					_putchar('.');
+					_putchar('.');
+					_putchar(r + 48);
+				}
+				else
+				{
+					_putchar('.');
+					_putchar((r / 10) + 48);
+					_putchar((r % 10) + 48);
+				}
+				if (b != 9)
+				{
+					_putchar(',');
+				}
+				else
+				{
+					_putchar('\n');
+				}
 			}
 		}
 	}

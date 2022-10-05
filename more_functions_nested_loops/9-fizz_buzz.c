@@ -1,10 +1,10 @@
 #include <stdio.h>
 /**
- * fizz_buzz - prints 1..100 replacing %3=0, %5=0 && %3&%5=0 with strings
+ * _start - prints 1..100 replacing %3=0, %5=0 && %3&%5=0 with strings
  *
  * Return: void
  */
-void fizz_buzz(void)
+void _start(void)
 {
 	int a = 1;
 

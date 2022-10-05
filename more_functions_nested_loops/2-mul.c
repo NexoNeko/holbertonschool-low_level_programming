@@ -1,5 +1,8 @@
 /**
- * add - adds two values.
+ * mul - multiplies two numbers
+ *
+ * @a: int 1
+ * @b: int2
  *
  * Return: a * b
  */

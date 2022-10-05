@@ -1,4 +1,5 @@
-/**
+
+0;136;0c/**
  * print_diagonal - prints a diagonal of n size
  *
  * @c: Char to be printed
@@ -8,7 +9,7 @@
 int _putchar (char c);
 void print_diagonal(int n)
 {
-	int a = 0, s = 0;
+	int a = 0,s = 0;
 
 	while (a < n && n > 0)
 	{

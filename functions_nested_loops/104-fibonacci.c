@@ -7,16 +7,16 @@
 int main(void)
 {
 	int i;
-	unsigned long n, a = 0, b = 1;
+	long double n, a = 0, b = 1;
 
 	n = a + b;
-	for (i = 0; i <= 98; i++)
+	for (i = 0; i <= 96; i++)
 	{
-		printf("%lu, ", n);
+		printf("%.0Lf, ", n);
 		a = b;
 		b = n;
 		n = a + b;
 	}
-	printf("%lu\n", n);
+	printf("%.0Lf\n", n);
 	return (0);
 }

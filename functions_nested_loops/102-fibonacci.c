@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-	int i, a = 0, b = 1;
-	unsigned long n;
+	int i;
+	unsigned long n, a = 0, b = 1;
 
 	n = a + b;
 	for (i = 0; i < 49; i++)

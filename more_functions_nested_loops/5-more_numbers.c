@@ -1,11 +1,9 @@
+#include "main.h"
 /**
  * more_numbers - prints from 0 to 14\n.
  *
- * @c: Char to be printed
- *
  * Return: void
  */
-int _putchar (char c);
 void more_numbers(void)
 {
 	int a = 0, b = 0;

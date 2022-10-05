@@ -1,11 +1,9 @@
+#include "main.h"
 /**
  * print_most_numbers - Prints 0..9\n w/o 2&4
  *
- * @c: Char to be printed
- *
  * Return: void
  */
-int _putchar (char c);
 void print_most_numbers(void)
 {
 	int a = 0;

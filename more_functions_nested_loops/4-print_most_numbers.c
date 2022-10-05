@@ -1,12 +1,12 @@
 /**
- * print_numbers - prints from 0 to 9\n.
+ * print_most_numbers - Prints 0..9\n w/o 2&4
  *
  * @c: Char to be printed
  *
  * Return: void
  */
 int _putchar (char c);
-void print_numbers(void)
+void print_most_numbers(void)
 {
 	int a = 0;
 

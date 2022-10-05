@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "main.h"
+
 /**
  * main - check the code
  *
@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	fizz_buzz();
-	return (0);
+    print_numbers();
+    return (0);
 }

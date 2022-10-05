@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * fizz_buzz - prints 1..100 replacing %3=0, %5=0 && %3&%5=0 with strings
  *

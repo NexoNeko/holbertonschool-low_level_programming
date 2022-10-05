@@ -10,6 +10,7 @@ int main(void)
 	unsigned long n, a = 0, b = 1, s;
 
 	n = a + b;
+	s = 0;
 	for (i = 0; i < 32; i++)
 	{
 		if ((n % 2) == 0)

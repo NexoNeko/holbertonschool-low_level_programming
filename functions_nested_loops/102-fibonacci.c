@@ -1,20 +1,22 @@
 #include <stdio.h>
 /**
- * fibonacci - prints the 50 first nums of the fibonacci sequence
+ * main - prints the 50 first nums of the fibonacci sequence
  *
- * Return: 0 or 1
+ * Return: 0
  */
 int main(void)
 {
-	int i, a = 0, b = 1, n;
+	int i, a = 0, b = 1;
+	unsigned long n;
 
 	n = a + b;
-	for (i = 0; i < 50; i++)
+	for (i = 0; i < 49; i++)
 	{
-		printf("%ld, ", n);
+		printf("%lu, ", n);
 		a = b;
 		b = n;
 		n = a + b;
 	}
-	printf("%ld\n", n);
+	printf("%lu\n", n);
+	return (0);
 }

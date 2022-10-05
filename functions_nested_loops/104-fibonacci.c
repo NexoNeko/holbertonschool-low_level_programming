@@ -7,6 +7,7 @@
 int main(void)
 {
 	int i;
+
 	long double n, a = 0, b = 1;
 
 	n = a + b;

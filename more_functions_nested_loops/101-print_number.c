@@ -1,5 +1,5 @@
 /**
- * print_number - prints int n
+ * print_number - Prints whatever number is provided by n
  *
  * @c: Char to be printed
  *
@@ -8,37 +8,29 @@
 int _putchar (char c);
 void print_number(int n)
 {
-	int i;
+	int i, c = 1, m, f;
 
-	i = 0;
 	if (n < 0)
 	{
 		n /= -1;
-		_putchar('-');
+		putchar('-');
 	}
-	if (n > 999)
+	i = n;
+	for (; i > 9;)
 	{
-		i = (((n / 10) / 10) / 10);
-		_putchar(i + 48);
-		i *= 1000;
-		_putchar((((n - i) / 10) / 10) + 48);
-		i = (i / 1000) * 100;
-		_putchar((((n - i) / 10) % 10) + 48);
-		_putchar((n % 10) + 48);
+		i /= 10;
+		c += 1;
 	}
-	else if (n > 99)
+	while (c > 0)
 	{
-		i = (((n / 10) / 10));
-		_putchar(i + 48);
-		i *= 100;
-		_putchar(((n - i) / 10) + 48);
-		_putchar((n % 10) + 48);
+		m = 1;
+		for (f = 1; f != c; f++)
+			m *= 10;
+		putchar(i + 48);
+		n = n - (i * m);
+		c -= 1;
+		i = n;
+		for (; i > 9;)
+			i /= 10;
 	}
-	else if (n > 9)
-	{
-		_putchar((n / 10) + 48);
-		_putchar((n % 10) + 48);
-	}
-	else
-		_putchar(n + 48);
 }

@@ -13,7 +13,7 @@ void print_number(int n)
 	if (n < 0)
 	{
 		n /= -1;
-		putchar('-');
+		_putchar('-');
 	}
 	i = n;
 	for (; i > 9;)
@@ -26,11 +26,20 @@ void print_number(int n)
 		m = 1;
 		for (f = 1; f != c; f++)
 			m *= 10;
-		putchar(i + 48);
+		_putchar(i + 48);
 		n = n - (i * m);
 		c -= 1;
 		i = n;
+		f = 1;
 		for (; i > 9;)
+		{
 			i /= 10;
+			f++;
+		}
+		if (c > f)
+		{
+			_putchar('0');
+			c--;
+		}
 	}
 }

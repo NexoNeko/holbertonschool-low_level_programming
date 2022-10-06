@@ -8,11 +8,13 @@
 int _putchar (char c);
 void print_number(int n)
 {
-	int i, c = 1, m, f;
+	int i, c = 1, m, f, x;
 
 	if (n < 0)
 	{
 		n /= -1;
+		n -= 1;
+		x = 1;
 		_putchar('-');
 	}
 	i = n;
@@ -26,6 +28,8 @@ void print_number(int n)
 		m = 1;
 		for (f = 1; f != c; f++)
 			m *= 10;
+		if (c == 1 && x == 1)
+			i++;
 		_putchar(i + 48);
 		n = n - (i * m);
 		c -= 1;

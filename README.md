@@ -1,1 +1,1 @@
-First week of C @ holberton school.
+C for holberton school.

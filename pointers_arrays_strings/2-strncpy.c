@@ -1,5 +1,5 @@
 /**
- * _strncopy - copies n chars from src to dest
+ * _strncpy - copies n chars from src to dest
  *
  * @dest: String to be expanded
  * @src: text to be pasted into previous string
@@ -9,18 +9,18 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
+	int i, c;
 	char *a;
 
-	i = 0;
-	while (dest[i++])
+	i = c = 0;
+	while (src[c++])
 		;
-	if (n > i)
-		n = i;
-	i = 0;
 	while (i < n)
 	{
-		dest[i] = src[i];
+		if (i < c)
+			dest[i] = src[i];
+		else
+			dest[i] = '\0';
 		i++;
 	}
 	a = dest;

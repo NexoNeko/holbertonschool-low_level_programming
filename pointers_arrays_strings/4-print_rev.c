@@ -1,10 +1,11 @@
 /**
  * print_rev - reverses a string and prints it
  *
- * @s: string to be reversed
+ * @c: character to be printed
  *
  * Return: void
  */
+int _putchar(char c);
 void print_rev(char *s)
 {
 	int i, c;
@@ -14,6 +15,6 @@ void print_rev(char *s)
 		c++;
 	c -= 1;
 	for (; c > -1; c--)
-		putchar(str[c]);
-	putchar('\n');
+		_putchar(str[c]);
+	_putchar('\n');
 }

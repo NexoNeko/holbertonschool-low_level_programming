@@ -13,6 +13,7 @@ void puts2(char *str)
 	c = i = 0;
 	for (; str[i] != '\0'; i++)
 		c++;
+	if (c < 100)
 	c -= 1;
 	for (i = 0; c > -1; c--)
 	{

@@ -8,9 +8,8 @@
 void rev_string(char *s)
 {
 	int i, c;
-	char *a, temp;
+	char temp;
 
-	a = s;
 	c = i = 0;
 	while (s[i++])
 		c++;
@@ -21,5 +20,4 @@ void rev_string(char *s)
 		s[i] = s[c - i];
 		s[c - i] = temp;
 	}
-	return (a);
 }

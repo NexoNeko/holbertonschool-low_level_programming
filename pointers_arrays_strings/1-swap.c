@@ -1,5 +1,8 @@
 /**
- * todo
+ * swap_int - Swaps int a for int b
+ *
+ * @a: Primary integer, becomes second
+ * @b: Secondary integer, becomes first
  *
  * Return: void
  */

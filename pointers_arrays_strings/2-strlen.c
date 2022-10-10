@@ -1,5 +1,7 @@
 /**
- * todo
+ * _strlen - Returns lenght of a string
+ *
+ * @s: String to be evaluated
  *
  * Return: i
  */

@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * print_array - Prints N elements of an array of integers
  *

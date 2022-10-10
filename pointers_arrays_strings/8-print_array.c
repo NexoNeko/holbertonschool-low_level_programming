@@ -1,5 +1,8 @@
 /**
- * todo
+ * print_array - Prints N elements of an array of integers
+ *
+ * @a: The array to be printed
+ * @n: The number of integers to be printed
  *
  * Return: void
  */

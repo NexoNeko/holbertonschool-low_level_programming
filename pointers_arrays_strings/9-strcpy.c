@@ -1,5 +1,8 @@
 /**
- * todo
+ * _strcpy - Copies the contents of a string to another string
+ *
+ * @src: Characters will be copied FROM this string
+ * @dest: Characters will be copied TO this string.
  *
  * Return: void
  */
@@ -16,5 +19,5 @@ char *_strcpy(char *dest, char *src)
 		i++;
 	}
 	a = dest;
-	return(a);
+	return (a);
 }

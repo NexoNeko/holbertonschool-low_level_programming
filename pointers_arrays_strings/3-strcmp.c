@@ -19,6 +19,6 @@ int _strcmp(char *s1, char *s2)
 			r++;
 		i++;
 	}
-	i = (((c * 10) - (r * 10)) / 2);
+	i = (r - c);
 	return (i);
 }

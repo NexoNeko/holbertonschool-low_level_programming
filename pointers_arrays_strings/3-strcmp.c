@@ -17,8 +17,6 @@ int _strcmp(char *s1, char *s2)
 			c++;
 		else if (s1[i] > s2[i])
 			r++;
-		else
-			;
 		i++;
 	}
 	i = (((c * 10) - (r * 10)) / 2);

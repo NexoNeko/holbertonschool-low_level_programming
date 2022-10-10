@@ -14,7 +14,7 @@ void print_array(int *a, int n)
 	m = n;
 	n -= 1;
 	if (n < 1)
-		;
+		printf("  ");
 	else
 	for (i = 0; n > -1; n--)
 	{

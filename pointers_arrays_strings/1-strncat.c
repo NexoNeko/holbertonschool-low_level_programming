@@ -1,12 +1,12 @@
 /**
- * _strcat - concatenates two strings
+ * _strncat - concatenates two strings, n size
  *
  * @dest: String to be expanded
  * @src: text to be pasted into previous string
  *
  * Return: void
  */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i, c, b;
 	char *a;

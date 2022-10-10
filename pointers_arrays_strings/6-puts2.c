@@ -1,5 +1,7 @@
 /**
- * todo
+ * puts2 - prints every other character, starting from the first
+ *
+ * @str: string to be split
  *
  * Return: void
  */

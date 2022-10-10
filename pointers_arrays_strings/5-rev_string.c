@@ -1,5 +1,7 @@
 /**
- * todo
+ * rev_string - Reverses a string
+ *
+ * @s: String to be reversed
  *
  * Return: void
  */

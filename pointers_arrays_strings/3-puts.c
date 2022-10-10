@@ -1,5 +1,7 @@
 /**
- * todo
+ * _puts - Prints a whole string, w/o \0
+ *
+ * @str: Input string to be printed
  *
  * Return: void
  */

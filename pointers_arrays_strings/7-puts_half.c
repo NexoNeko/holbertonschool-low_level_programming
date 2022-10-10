@@ -1,5 +1,7 @@
 /**
- * todo
+ * puts_half - splits a string in half
+ *
+ * @str: String to be split
  *
  * Return: void
  */

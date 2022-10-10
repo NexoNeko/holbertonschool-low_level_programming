@@ -3,6 +3,7 @@
  *
  * @dest: String to be expanded
  * @src: text to be pasted into previous string
+ * @n: number of bytes to be copied
  *
  * Return: void
  */

@@ -1,10 +1,11 @@
 /**
  * puts2 - prints every other character, starting from the first
  *
- * @str: string to be split
+ * @c: char printed
  *
  * Return: void
  */
+int _putchar(char c);
 void puts2(char *str)
 {
 	int i, c;
@@ -16,8 +17,8 @@ void puts2(char *str)
 	for (i = 0; c > -1; c--)
 	{
 		if ((c % 2) == 1)
-			printf("%c", str[i]);
+			_putchar(str[i])
 		i++;
 	}
-	putchar('\n');
+	_putchar('\n');
 }

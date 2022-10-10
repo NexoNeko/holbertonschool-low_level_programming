@@ -1,7 +1,7 @@
 /**
  * _puts - Prints a whole string, w/o \0
  *
- * @str: Input string to be printed
+ * @c: character to be printed
  *
  * Return: void
  */

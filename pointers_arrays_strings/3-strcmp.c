@@ -28,5 +28,5 @@ int _strcmp(char *s1, char *s2)
 		s2Max += s2[i];
 		i++;
 	}
-	return ((s1Max - s2Max));
+	return ((s1Max - s2Max) + 1);
 }

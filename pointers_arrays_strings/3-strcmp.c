@@ -28,5 +28,10 @@ int _strcmp(char *s1, char *s2)
 		s2Max += s2[i];
 		i++;
 	}
-	return ((s1Max - s2Max) + 1);
+	if (s1Max > s2Max)
+		return (13);
+	else if (s1Max < s2Max)
+		return (-13);
+	else
+		return (0);
 }

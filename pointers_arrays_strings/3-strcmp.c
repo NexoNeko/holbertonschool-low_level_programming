@@ -8,26 +8,25 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int i, c, r, l;
+	int i, s1Max, s2Max, n;
 
-	i = r = c = 0;
-	while (s1[c++])
+	i = s1Max = s2Max = n = 0;
+	while (s1[i++])
 		;
-	while (s2[r++])
+	while (s2[n++])
 		;
-	if (c < r)
-		l = c;
-	else
-		l = r;
-	i = r = c = 0;
-	while (i < l)
+	i -= 1;
+	n -= 1;
+
+	if (i < n)
+		n = i;
+	i = 0;
+
+	while (i  < n)
 	{
-		if (s1[i] < s2[i])
-			c++;
-		else if (s1[i] > s2[i])
-			r++;
+		s1Max += s1[i];
+		s2Max += s2[i];
 		i++;
 	}
-	i = (r - c);
-	return (i);
+	return ((s1Max - s2Max));
 }

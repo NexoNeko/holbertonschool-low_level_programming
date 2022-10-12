@@ -1,18 +1,17 @@
+#include "main.h"
 #include <stdio.h>
 
-char *cap_string(char *);
-
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	char s[] = "hello world! expect the best. Prepare for the worst. Capitalize on what comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
+	char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
 	char *p;
 
-	p = cap_string(s);
+	p = leet(s);
 	printf("%s", p);
 	printf("%s", s);
 	return (0);

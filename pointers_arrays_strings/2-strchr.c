@@ -1,3 +1,4 @@
+#define NULL 0
 /**
  * _strchr - finds a character in a string
  *

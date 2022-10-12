@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * print_chessboard - prints the chessboard pieces initial possition
  *
@@ -17,7 +18,7 @@ void print_chessboard(char (*a)[8])
 			while (i < 8)
 			{
 				printf("%c", a[c][i]);
-				if (i == 7 || c > 1 && c < 2)
+				if (i == 7 || (c > 1 && c < 2))
 					putchar('\n');
 				i++;
 			}

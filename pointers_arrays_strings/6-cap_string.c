@@ -1,9 +1,9 @@
 /**
- * puts2 - prints every other character, starting from the first
+ * cap_string - Capitalizes words on a given string
  *
- * @c: char printed
+ * @p: String to capitalize
  *
- * Return: void
+ * Return: p
  */
 char *cap_string(char *p)
 {
@@ -11,10 +11,12 @@ char *cap_string(char *p)
 	int i, n;
 
 	i = n = 0;
+	if (p[n] > 96 && p[n] < 123)
+		p[n] -= 32;
 	for (n = 0; p[n] != '\0'; n++)
 	{
 		i = 0;
-		for(; c[i] != '\0'; )
+		for (; c[i] != '\0'; )
 		{
 			if (p[n] == c[i])
 			{

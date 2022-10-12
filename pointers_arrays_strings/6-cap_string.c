@@ -13,7 +13,6 @@ char *cap_string(char *p)
 	i = n = 0;
 	for (n = 0; p[n] != '\0'; n++)
 	{
-		printf (" %c ", p[n]);
 		i = 0;
 		for(; c[i] != '\0'; )
 		{
@@ -26,7 +25,7 @@ char *cap_string(char *p)
 					if (p[n] > 96 && p[n] < 123)
 						p[n] -= 32;
 				}
-				else if (p[n] > 96 < 123)
+				else if (p[n] > 96 && p[n] < 123)
 					p[n] -= 32;
 			}
 			i++;

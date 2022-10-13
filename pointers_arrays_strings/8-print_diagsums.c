@@ -13,6 +13,7 @@ void print_diagsums(int *a, int size)
 
 	i = reslt = R = 0;
 	R = size;
+	reslt += a[i];
 	while (i < (R - 1))
 	{
 		reslt += a[size + i + 1];

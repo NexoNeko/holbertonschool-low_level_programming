@@ -1,3 +1,4 @@
+#define NULL 0
 /**
  * _strstr - finds a specific char sequence within a string
  *
@@ -27,5 +28,5 @@ char *_strstr(char *haystack, char *needle)
 		else
 			return (haystack + i);
 	}
-	return (haystack);
+	return (NULL);
 }

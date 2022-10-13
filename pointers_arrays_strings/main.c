@@ -11,7 +11,7 @@ char *_strstr(char *, char *);
 int main(void)
 {
 	char *s = "First, solve the problem. Then, write the code.";
-	char *f = "Holberton";
+	char *f = "";
 	char *t;
 
 	t = _strstr(s, f);

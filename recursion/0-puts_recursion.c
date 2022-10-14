@@ -8,15 +8,9 @@
 int _putchar(char c);
 void _puts_recursion(char *s)
 {
-	int i = 0, max;
+	int i = 0;
 
-	while (s[i] > 31 && s[i] <= 126)
-	{
-		i++;
-	}
-	max = s[i];
-
-	if (*s != max)
+	if (s[i] > 31 && s[i] <= 126)
 	{
 		_putchar(*s);
 		_puts_recursion(s + 1);

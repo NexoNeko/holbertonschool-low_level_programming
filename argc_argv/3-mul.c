@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - prints all arguments passed to the program
+ * main - multiplies a * b;
  *
  * @argc: num of arguments (int)
  * @argv: arguments (array of *)

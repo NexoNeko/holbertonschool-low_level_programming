@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
 		while(i < argc)
 		{
 			a = strtol(argv[i], &p, 10);
-			printf("a: %ld\n", a);
 			b += a;
 			i++;
 		}
@@ -35,7 +34,7 @@ int main(int argc, char *argv[])
 
 	if (*p > 32 && *p <= 126)
 	{
-		printf("error\n");
+		printf("Error\n");
 		return (1);
 	}
 	printf("%ld\n", b);

@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	long a = strtol(argv[1], &p, 10);
 	long b = strtol(argv[2], &p, 10);
 
-	if (argc > 1)
+	if (argc > 2)
 		printf("%ld\n", a * b);
 	else
 		printf("Error");

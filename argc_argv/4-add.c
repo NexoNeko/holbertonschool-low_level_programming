@@ -17,12 +17,12 @@ int main(int argc, char *argv[])
 	a = b = 0;
 	if (argc > 2)
 	{
-		while(i < argc)
+		while (i < argc)
 		{
 			a = strtol(argv[i], &p, 10);
 			b += a;
 			i++;
-			if ((*p > 32 && *p < 48) ||(*p > 57 && *p < 127))
+			if ((*p > 32 && *p < 48) || (*p > 57 && *p < 127))
 			{
 				printf("Error\n");
 				return (1);

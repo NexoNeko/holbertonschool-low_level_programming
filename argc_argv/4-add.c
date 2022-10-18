@@ -22,6 +22,11 @@ int main(int argc, char *argv[])
 			a = strtol(argv[i], &p, 10);
 			b += a;
 			i++;
+			if ((*p > 32 && *p < 48) ||(*p > 57 && *p < 127))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
 	}
 	else if (argc == 2)
@@ -32,11 +37,6 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	if (*p > 32 && *p <= 126)
-	{
-		printf("Error\n");
-		return (1);
-	}
 	printf("%ld\n", b);
 	return (0);
 }

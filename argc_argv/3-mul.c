@@ -11,12 +11,15 @@
 int main(int argc, char *argv[])
 {
 	char *p;
-	long a = strtol(argv[1], &p, 10);
-	long b = strtol(argv[2], &p, 10);
+	long a, b;
 
-	if (argc > 2)
+	if (argc == 3)
+	{
+		a = strtol(argv[1], &p, 10);
+		b = strtol(argv[2], &p, 10);
 		printf("%ld\n", a * b);
+	}
 	else
-		printf("Error");
+		printf("Error\n");
 	return (0);
 }

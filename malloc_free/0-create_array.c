@@ -7,13 +7,15 @@
  *
  * Return: Pointer
  */
-char *create_array (unsigned int size, char c)
+char *create_array(unsigned int size, char c)
 {
-	unsigned int i = 1;
+	unsigned int i = 0;
 	char *ar;
 
 	ar = malloc(size * sizeof(char));
-	while(i < size)
+	if (ar == NULL)
+		return(ar);
+	while (i < size)
 	{
 		ar[i] = c;
 		i++;

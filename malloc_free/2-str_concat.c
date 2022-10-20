@@ -28,8 +28,6 @@ char *str_concat(char *s1, char *s2)
 
 	c = (i + ia) + 1;
 	a = malloc(c * sizeof(char));
-	if (a = NULL)
-		return(a);
 
 	if (i != 0)
 	{
@@ -37,10 +35,10 @@ char *str_concat(char *s1, char *s2)
 		do {
 			a[i] = s1[i];
 		} while (s1[i++]);
+		i--;
 	}
 	if (ia != 0)
 	{
-		i--;
 		ia = 0;
 		do {
 			a[i] = s2[ia];

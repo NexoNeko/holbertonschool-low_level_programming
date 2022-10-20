@@ -17,22 +17,16 @@ char *str_concat(char *s1, char *s2)
 		a = malloc(2 * sizeof(char));
 		return (a);
 	}
-
 	if (s1 != NULL)
-	{
 		while (s1[i])
 			i++;
-	}
 	if (s2 != NULL)
-	{
 		while (s2[ia])
 			ia++;
-	}
-
 	c = (i + ia) + 1;
 	a = malloc(c * sizeof(char));
 	if (!a)
-		return(a);
+		return (a);
 
 	if (i != 0)
 	{

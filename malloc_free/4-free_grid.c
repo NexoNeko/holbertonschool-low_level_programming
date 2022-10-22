@@ -2,7 +2,7 @@
 /**
  * free_grid - frees memory previously allocated by alloc_grid
  *
- * @width: Width of the array
+ * @grid: The array to be freed
  * @height: Height of the array
  *
  * Return: Void.

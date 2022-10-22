@@ -1,6 +1,7 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+int **alloc_grid(int, int);
 
 /**
  * print_grid - prints a grid of integers
@@ -30,23 +31,25 @@ void print_grid(int **grid, int width, int height)
 }
 
 /**
- * main - check the code
+ * main - check the code .
  *
  * Return: Always 0.
  */
 int main(void)
 {
 	int **grid;
+	int h;
+	int w;
 
-	grid = alloc_grid(6, 4);
+	h = 20;
+	w = 20;
+	grid = alloc_grid(h, w);
 	if (grid == NULL)
 	{
 		return (1);
 	}
-	print_grid(grid, 6, 4);
+	print_grid(grid, h, w);
 	printf("\n");
-	grid[0][3] = 98;
-	grid[3][4] = 402;
-	print_grid(grid, 6, 4);
+	free(grid);
 	return (0);
 }

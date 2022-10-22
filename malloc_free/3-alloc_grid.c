@@ -1,6 +1,6 @@
 #include <stdlib.h>
 /**
- * alloc_grid - Returns a pointer to a 2d array initialized with 0s
+ * alloc_grid - Returns a pointer to a 2d array initialized with zeros
  *
  * @width: Width of the array
  * @height: Height of the array

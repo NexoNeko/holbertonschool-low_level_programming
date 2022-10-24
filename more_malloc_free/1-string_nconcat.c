@@ -15,7 +15,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s1 == NULL && s2 == NULL)
 	{
-		return (NULL);
+		a = calloc(2, sizeof(char));
+		return (a);
 	}
 	if (s1 != NULL)
 		while (s1[i])
@@ -24,7 +25,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		while (s2[ia] && ia < n)
 			ia++;
 	c = (i + ia) + 1;
-	a = malloc(c * sizeof(char));
+	a = calloc(c, sizeof(char));
 	if (!a)
 		return (NULL);
 	if (i != 0)

@@ -2,7 +2,8 @@
 /**
  * array_range - creates an array of MAX size, containing min..max values.
  *
- *
+ * @min: the starting value
+ * @max: the max value
  * Return: pointer to newly assigned array
  */
 int *array_range(int min, int max)
@@ -13,11 +14,12 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	ar = malloc(max * sizeof(int) + 1);
+	c = (max - min) + 1;
+	ar = calloc(c, sizeof(int));
 	if (!ar)
-		return(NULL);
+		return (NULL);
 
-	while (i <= max)
+	while (i < c)
 	{
 		ar[i] = min;
 		i++;

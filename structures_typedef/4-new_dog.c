@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
+
+/**
+ * rplce - allocates memory n copies a string in there
+ *
+ * @src: source string
+ *
+ * Return: Pointer to allocated memory
+ */
+char *rplce(char *src);
+
 /**
  * new_dog - creates a new dog record, allocated in heap.
  *
@@ -12,25 +22,44 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *newdog;
-	char *nil = "(nil)";
+	dog_t *dogz;
 
-	newdog = malloc(sizeof(dog_t));
-
-	if (!newdog)
+	dogz = malloc(sizeof(dog_t));
+	if (dogz == NULL)
 		return (NULL);
 
-	if (name != NULL)
-		newdog->name = name;
-	else
-		newdog->name = nil;
 
-	newdog->age = age;
+	dogz->name = rplce(name);
+	if (dogz->name == NULL)
+	{
+		free(dogz);
+		return(NULL);
+	}
+	dogz->owner = rplce(owner);
+	if (dogz->owner == NULL)
+	{
+		free(dogz->name);
+		free(dogz);
+		return(NULL);
+	}
 
-	if (owner != NULL)
-		newdog->owner = owner;
-	else
-		newdog->owner = nil;
+	dogz->age = age;
 
-	return (newdog);
+	return (dogz);
+}
+
+char *rplce(char *src)
+{
+	int i;
+	char *f;
+
+	f = malloc(sizeof(src) + 1);
+	if (f == NULL)
+		return (NULL);
+
+	for (i = 0; src[i]; i++)
+		f[i] = src[i];
+	f[i] = '\0';
+
+	return(f);
 }

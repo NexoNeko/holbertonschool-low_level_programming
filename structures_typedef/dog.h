@@ -25,4 +25,11 @@ struct dog
  */
 void init_dog(struct dog *d, char *name, float age, char *owner);
 
+/**
+ * print_dog - prints the values stored within a var of type dog
+ *
+ * @d: pointer to dog variable
+ *
+ */
+void print_dog(struct dog *d);
 #endif

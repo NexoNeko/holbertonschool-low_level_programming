@@ -54,6 +54,7 @@ char *rplce(char *src)
 	char *f;
 
 	f = malloc(sizeof(src) + 1);
+
 	if (f == NULL)
 		return (NULL);
 

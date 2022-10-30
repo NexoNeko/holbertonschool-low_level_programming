@@ -4,6 +4,9 @@
 /**
  * main - handles part of the calculus between two numbers
  *
+ * @argc: Num of chars sent as an arg
+ * @argv: arguments
+ *
  * Return: a + b
  */
 int main(int argc, char *argv[])
@@ -15,7 +18,7 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit (98);
+		exit(98);
 	}
 
 	a = atoi(argv[1]);
@@ -24,8 +27,8 @@ int main(int argc, char *argv[])
 
 	if ((*sgn == '/' || *sgn == '%') && (b == 0))
 	{
-		printf ("Error\n");
-		exit (100);
+		printf("Error\n");
+		exit(100);
 	}
 
 	op = get_op_func(sgn);
@@ -33,7 +36,7 @@ int main(int argc, char *argv[])
 	if (op == NULL)
 	{
 		printf("Error\n");
-		exit (99);
+		exit(99);
 	}
 
 	printf("%d\n", op(a, b));

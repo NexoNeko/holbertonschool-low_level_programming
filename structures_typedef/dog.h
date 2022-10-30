@@ -13,4 +13,8 @@ struct dog
 	char *owner;
 	float age;
 };
+/**
+ * init_dog - initializes a var of type dog
+ */
+void init_dog(struct dog *d, char *name, float age, char *owner);
 #endif

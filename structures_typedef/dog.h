@@ -7,12 +7,12 @@
  * @age: age of dog
  *
  */
-struct dog
+typedef struct dog
 {
 	char *name;
 	char *owner;
 	float age;
-};
+} dog_t;
 
 /**
  * init_dog - initializes a var of type dog

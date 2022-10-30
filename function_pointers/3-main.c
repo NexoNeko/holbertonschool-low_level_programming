@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
-
+/**
+ * main - handles part of the calculus between two numbers
+ *
+ * Return: a + b
+ */
 int main(int argc, char *argv[])
 {
 	int a, b;

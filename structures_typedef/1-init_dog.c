@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "dog.h"
 /**
  * init_dog - initializes a var of type dog
@@ -10,6 +11,8 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
+	if (name == NULL || d == NULL || owner == NULL )
+		exit(1);
 	d->name = name;
 	d->owner = owner;
 	d->age = age;

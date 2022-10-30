@@ -1,3 +1,4 @@
+#include "dog.h"
 /**
  * free_dog - frees heap memory from dog vars
  *

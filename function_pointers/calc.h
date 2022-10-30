@@ -1,1 +1,0 @@
-#ifndef CALC_H

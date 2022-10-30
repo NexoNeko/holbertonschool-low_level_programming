@@ -3,20 +3,27 @@
 #include "3-calc.h"
 
 int main(int argc, char *argv[])
-	int i;
+{
 	int a, b;
 	char *sgn;
 	int (*op)(int, int);
+
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit (98);
+	}
 
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 	sgn = argv[2];
 
 	op = get_op_func(sgn);
+
 	if (op == NULL)
 	{
-		printf("Error");
-		return (-1);
+		printf("Error\n");
+		return (99);
 	}
 
 	printf("%d\n", op(a, b));

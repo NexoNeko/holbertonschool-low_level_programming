@@ -1,7 +1,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "3-calc.h"
-
+/**
+ * get_op_func - it's basically a fancy switch
+ *
+ * @s: the char passed to the function
+ *
+ * Return: (X)(int, int) function
+ */
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {

@@ -1,3 +1,4 @@
+#include <stddef.h>
 /**
  * int_index - looks for the first appearance of a char on an array
  *

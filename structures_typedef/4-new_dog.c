@@ -3,7 +3,7 @@
 #include "dog.h"
 
 /**
- * rplce - allocates memory n copies a string in there
+ * rplce - allocates some memory and copies a string to said memory
  *
  * @src: source string
  *
@@ -33,14 +33,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (dogz->name == NULL)
 	{
 		free(dogz);
-		return(NULL);
+		return (NULL);
 	}
 	dogz->owner = rplce(owner);
 	if (dogz->owner == NULL)
 	{
 		free(dogz->name);
 		free(dogz);
-		return(NULL);
+		return (NULL);
 	}
 
 	dogz->age = age;
@@ -48,6 +48,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 	return (dogz);
 }
 
+
+
+/**
+ * rplce - allocates some memory and copies a string to said memory
+ *
+ * @src: source string
+ *
+ * Return: Pointer to allocated memory
+ */
 char *rplce(char *src)
 {
 	int i;
@@ -62,5 +71,5 @@ char *rplce(char *src)
 		f[i] = src[i];
 	f[i] = '\0';
 
-	return(f);
+	return (f);
 }

@@ -43,4 +43,13 @@ void print_dog(struct dog *d);
  * Return: new dog record;
  */
 dog_t *new_dog(char *name, float age, char *owner);
+
+/**
+ * free_dog - frees heap memory from dog vars
+ *
+ * @d: dog record to free
+ *
+ * Return: new dog record;
+ */
+void free_dog(dog_t *d);
 #endif

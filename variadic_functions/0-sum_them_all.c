@@ -2,6 +2,8 @@
 /**
  * sum_them_all - sums all the parameters sent to the function
  *
+ * @n: number of ints to be passed to the function
+ *
  * Return: int sum
  */
 int sum_them_all(const unsigned int n, ...)

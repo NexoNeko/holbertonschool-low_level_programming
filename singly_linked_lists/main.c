@@ -1,23 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * main - check the code
+ * main - check the code .
  *
  * Return: Always 0.
  */
 int main(void)
 {
-    list_t *head;
-
-    head = NULL;
-    add_node_end(&head, "Bob");
-    add_node_end(&head, "&");
-    add_node_end(&head, "Kris");
-    add_node_end(&head, "love");
-    add_node_end(&head, "asm");
-    print_list(head);
-    free_list(head);
-    head = NULL;
-    free (head);
-    return (0);
+	free_list(NULL);
+	printf("Freed !\n");
+	return (0);
 }

@@ -62,7 +62,7 @@ char *rplce(char *src)
 	int i;
 	char *f;
 
-	f = malloc(sizeof(src) + 1);
+	f = malloc(sizeof(src));
 
 	if (f == NULL)
 		return (NULL);

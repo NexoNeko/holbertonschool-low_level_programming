@@ -4,7 +4,7 @@
  *
  *@h: list to print the values of
  *
- *Return: Num of nodes
+ *Return: num of nodes.
  */
 size_t print_listint(const listint_t *h)
 {

@@ -20,7 +20,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 		temp = temp >> 1;
 		c++;
 	}
-	if (index > (c - 1))
+	if (index > 64)
 		return (-1);
 
 	temp = 1 << index;

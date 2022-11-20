@@ -9,12 +9,23 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int ret;
+	unsigned long int temp, c = 0;
 
-	ret = (n >> index) & 1;
-
-	if ((ret == 1) || (ret == 0))
-		return (ret);
+	if (n == 0)
+		return (0);
+	while (temp != 0)
+	{
+		temp = temp >> 1;
+		c++;
+	}
+	if (index <= c)
+	{
+		temp = (n >> index) & 1;
+		if ((temp == 1) || (temp == 0))
+			return (temp);
+		else
+			return (-1);
+	}
 	else
 		return (-1);
 }

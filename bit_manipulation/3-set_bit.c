@@ -9,10 +9,19 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int temp;
+	unsigned long int temp, c;
 
 	if (n == NULL)
 		return (-1);
+
+	temp = *n;
+	while (temp != 0)
+	{
+		temp = temp >> 1;
+		c++;
+	}
+	if (index > c)
+		return(-1);
 
 	temp = 1 << index;
 	*n |= temp;

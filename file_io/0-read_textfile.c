@@ -7,7 +7,7 @@
  *
  * Return: 1 on success, 0 on failure
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+size_t read_textfile(const char *filename, size_t letters)
 {
 	int filz = 0, wrtz = 0;
 	size_t i;

@@ -15,7 +15,7 @@ int create_file(const char *filename, char *text_content)
 	{
 		filz = creat(filename, 0600);
 
-		if (filz != -1 || text_content)
+		if (filz != -1 && text_content)
 		{
 			for (i = 0; text_content[i] != '\0'; i++)
 				;

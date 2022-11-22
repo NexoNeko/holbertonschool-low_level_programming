@@ -15,11 +15,6 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		return (-1);
 
 	temp = *n;
-	while (temp != 0)
-	{
-		temp = temp >> 1;
-		c++;
-	}
 	if (index > 64)
 		return (-1);
 

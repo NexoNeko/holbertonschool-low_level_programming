@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * set_bit - flips the bit at index
+ * set_bit - sets the bit at index to 1
  *
  * @n: decimal to convert
  * @index: index of bit to flip

@@ -24,13 +24,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (filz != -1)
 		{
 			read(filz, bufz, letters);
-			for (i = 0; bufz[i] != '\0' && i < letters; i++);
-			wrtz = write(1, bufz, i);
+			for (i = 0; bufz[i] != '\0' && i < letters; i++)
+				;
+			wrtz = write(STDOUT_FILENO, bufz, i);
 		}
 		free(bufz);
 		close(filz);
 		if (wrtz == -1)
-			return(0);
+			return (0);
 	}
-	return(wrtz);
+	return (wrtz);
 }

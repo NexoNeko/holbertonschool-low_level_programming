@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * create_file - creates a file with rw permissions
+ * append_text_to_file - creates a file with rw permissions
  *
  * @filename: the file name to create
  * @text_content: content of the file

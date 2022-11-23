@@ -10,8 +10,9 @@
 int create_file(const char *fromFi, char *toFi)
 {
 	int oleFlz, newzFlz, i, j, writz;
-	char *bufz;
+	char *bufz = NULL;
 
+	i = j = 0;
 	if (fromFi && toFi)
 	{
 		oleFlz = open(fromFi, O_RDONLY | S_IRUSR);
@@ -28,22 +29,30 @@ int create_file(const char *fromFi, char *toFi)
 			exit (99);
 		}
 
-		if (text_content != NULL)
+		bufz = malloc(sizeof(char) * 1024);
+		if (!bufz)
 		{
-			while (j < 1024)
-			{
-				for (i = 0; i < 1024; i++)
-				{
-				}
-			}
+			fprintf(STDERR, "Error assigning memory to heap");
+			exit (100);
+		}
 
-			writz = write(newzFlz, text_content, i);
+		while (bufz[i] != EOF)
+		{
+			while ((j = fgetc(oleFlz)) != EOF && i <= 1024)
+			{
+				bufz[i] = (char) j;
+				i++;
+			}
+			writz = write(newzFlz, bufz, i);
 			if (writz == -1)
 			{
 				fprintf(STDERR, "Error: Can't write to %s\n", toFi);
 				exit (99);
 			}
+			i = 0;
+			bufz[i] = (char) j;
 		}
+		return (1);
 	}
 	fprintf(STDERR, "Usage: cp file_from file_to\n");
 	exit (97);

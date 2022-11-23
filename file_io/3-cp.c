@@ -27,12 +27,12 @@ int main (int argc, char **argv)
  */
 int create_file(const char *fromFi, char *toFi)
 {
-	int oleFlz, newzFlz, i, j, writz;
+	int newzFlz, i, j, writz;
 	char *bufz = NULL;
+	FILE *oleFlz = fopen(fromFi, "r");
 
 	i = j = 0;
-	oleFlz = open(fromFi, O_RDONLY | S_IRUSR);
-	if (oleFlz == -1)
+	if (!oleFlz)
 		errz(98); /** error 98 */
 
 	newzFlz = creat(toFi, 0664);
@@ -44,7 +44,7 @@ int create_file(const char *fromFi, char *toFi)
 		errz(100); /** error 100 */
 	while (bufz[i] != EOF)
 	{
-		while ((j = getc(*oleFlz)) != EOF && i <= 1024)
+		while ((j = fgetc(oleFlz)) != EOF && i <= 1024)
 		{
 			bufz[i] = (char) j;
 			i++;

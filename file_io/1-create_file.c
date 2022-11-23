@@ -9,26 +9,28 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int filz = 0, wrtz = -1, i;
+        int filz = 0, wrtz = -1, i;
 
-	if (filename)
-	{
-		if (access(filename, R_OK) != 0 && access(filename, F_OK) == 0)
+        if (filename)
+        {
+		if (access(filename, F_OK) == -1)
+			filz = creat(filename, 0600);
+		else if (access(filename, R_OK) == -1)
 			return (-1);
+		else
+			filz = open(filename, O_RDWR);
+                if (filz == -1)
+                        return (-1);
 
-		filz = creat(filename, 0600);
-		if (filz == -1)
-			return (-1);
-
-		if (text_content)
-		{
-			for (i = 0; text_content[i] != '\0'; i++)
-				;
-			wrtz = write(filz, text_content, i);
-		}
-		close(filz);
-		if (wrtz != -1)
-			return (1);
-	}
-	return (-1);
+                if (text_content)
+                {
+                        for (i = 0; text_content[i] != '\0'; i++)
+                                ;
+                        wrtz = write(filz, text_content, i);
+                }
+                close(filz);
+                if (wrtz != -1)
+                        return (1);
+        }
+        return (-1);
 }

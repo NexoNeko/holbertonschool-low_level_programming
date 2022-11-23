@@ -18,7 +18,7 @@ int create_file(const char *filename, char *text_content)
 		else if (access(filename, R_OK) == -1)
 			return (-1);
 		else
-			filz = open(filename, O_RDWR);
+			filz = open(filename, O_WRONLY);
                 if (filz == -1)
                         return (-1);
 

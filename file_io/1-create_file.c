@@ -19,6 +19,7 @@ int create_file(const char *filename, char *text_content)
 			return (-1);
 		else
 			filz = open(filename, O_WRONLY);
+
                 if (filz == -1)
                         return (-1);
 
@@ -28,6 +29,7 @@ int create_file(const char *filename, char *text_content)
                                 ;
                         wrtz = write(filz, text_content, i);
                 }
+
                 close(filz);
                 if (wrtz != -1)
                         return (1);

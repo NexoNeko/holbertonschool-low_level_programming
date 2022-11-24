@@ -25,17 +25,14 @@ int main(int argc, char **argv)
  *
  * Return: 1 on success, -1 on failure
  */
-int create_file(const char *fromFi, char *toFi)
+void create_file(const char *fromFi, char *toFi)
 {
 	int newzFlz, writz, i = 0, j = 0;
 	char *bufz = NULL;
 	FILE *oleFlz = fopen(fromFi, "r");
 
 	if (!oleFlz)
-	{
-		__close(oleFlz, 0, NULL);
 		errz(98, fromFi, toFi); /** error 98 */
-	}
 	newzFlz = creat(toFi, 0664);
 	if (newzFlz == -1)
 	{
@@ -48,7 +45,6 @@ int create_file(const char *fromFi, char *toFi)
 		__close(oleFlz, newzFlz, bufz);
 		errz(101, NULL, NULL); /** error 101 */
 	}
-
 	i--;
 	while (bufz[i] != EOF)
 	{
@@ -69,7 +65,6 @@ int create_file(const char *fromFi, char *toFi)
 	}
 	i--;
 	writz = write(newzFlz, bufz, i);
-	return (0);
 }
 
 /**
@@ -116,14 +111,13 @@ void __close(FILE *sFrm, int sTo, char *bufz)
 		free(bufz);
 	if (sFrm)
 		i = fclose(sFrm);
-	if (i != 0)
-		dprintf(STDERR_FILENO, "Error: Can't close fd");
+	if (i == -1)
+		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
 
-	if (sTo)
+	if (sTo > 0)
 		i = close(sTo);
-	if (i != 0)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", sTo);
-
-	if (i != 0)
+	if (i == -1)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", sTo);
+	if (i == -1)
 		exit(100);
 }

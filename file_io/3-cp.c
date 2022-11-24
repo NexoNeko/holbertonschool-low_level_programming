@@ -114,12 +114,12 @@ void __close(FILE *sFrm, int sTo, char *bufz)
 	if (sFrm)
 		i = fclose(sFrm);
 	if (i != 0)
-		dprintf(2, "Error: Can't close fd");
+		dprintf(STDERR_FILENO, "Error: Can't close fd");
 
 	if (sTo)
 		i = close(sTo);
 	if (i != 0)
-		dprintf(2, "Error: Can't close fd %d", sTo);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", sTo);
 
 	if (i != 0)
 		exit(100);

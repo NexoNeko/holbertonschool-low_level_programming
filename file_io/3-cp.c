@@ -27,24 +27,21 @@ int main(int argc, char **argv)
  */
 int create_file(const char *fromFi, char *toFi)
 {
-	int newzFlz, writz, i, j;
+	int newzFlz, writz, i = 0, j = 0;
 	char *bufz = NULL;
 	FILE *oleFlz = fopen(fromFi, "r");
 
-	i = j = 0;
 	if (!oleFlz)
 	{
 		__close(oleFlz, 0, NULL);
 		errz(98, fromFi, toFi); /** error 98 */
 	}
-
 	newzFlz = creat(toFi, 0664);
 	if (newzFlz == -1)
 	{
 		__close(oleFlz, newzFlz, NULL);
 		errz(99, fromFi, toFi); /** error 99 */
 	}
-
 	bufz = malloc(sizeof(char) * 1024);
 	if (!bufz)
 	{
@@ -68,6 +65,7 @@ int create_file(const char *fromFi, char *toFi)
 		i = 0;
 		bufz[i] = (char) j;
 	}
+	writz = write(newzFlz, bufz, i);
 	return (0);
 }
 
@@ -75,7 +73,8 @@ int create_file(const char *fromFi, char *toFi)
  * errz - handles error messages
  *
  * @errCod: Error code
- * @msg: Extra info to print
+ * @oFi: File that was attempted to be opened
+ * @nFi: File that was attempted to write on
  */
 void errz(int errCod, const char *oFi, char *nFi)
 {
@@ -95,16 +94,16 @@ void errz(int errCod, const char *oFi, char *nFi)
 		exit(101);
 	default:
 		dprintf(2, "Error: Unknown error");
-		exit (102);
+		exit(102);
 	}
 }
 
 /**
  * __close - handles closing sd and errors
  *
- * @sFrm - 'fromFile' sd
- * @sTo - 'toFile' sd
- * @bufz - Buffer
+ * @sFrm: 'fromFile' sd
+ * @sTo: 'toFile' sd
+ * @bufz: Buffer
  */
 void __close(FILE *sFrm, int sTo, char *bufz)
 {
@@ -114,14 +113,14 @@ void __close(FILE *sFrm, int sTo, char *bufz)
 		free(bufz);
 	if (sFrm)
 		i = fclose(sFrm);
-	if (i)
+	if (i != 0)
 		dprintf(2, "Error: Can't close fd");
 
 	if (sTo)
 		i = close(sTo);
-	if (i)
+	if (i != 0)
 		dprintf(2, "Error: Can't close fd %d", sTo);
 
-	if (i)
-		exit (100);
+	if (i != 0)
+		exit(100);
 }

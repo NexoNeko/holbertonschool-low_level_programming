@@ -79,19 +79,19 @@ void errz(int errCod, const char *oFi, char *nFi)
 	switch (errCod)
 	{
 	case 97:
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	case 98:
-		dprintf(2, "Error: Can't read from file %s\n", oFi);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", oFi);
 		exit(98);
 	case 99:
-		dprintf(2, "Error: Can't write to %s\n", nFi);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", nFi);
 		exit(99);
 	case 101:
-		dprintf(2, "Error: Unable to assign memory to heap");
+		dprintf(STDERR_FILENO, "Error: Unable to assign memory to heap");
 		exit(101);
 	default:
-		dprintf(2, "Error: Unknown error");
+		dprintf(STDERR_FILENO, "Error: Unknown error");
 		exit(102);
 	}
 }
@@ -111,7 +111,7 @@ void __close(FILE *sFrm, int sTo, char *bufz)
 		free(bufz);
 	if (sFrm)
 		i = fclose(sFrm);
-	if (i == -1)
+	if (i != 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
 
 	if (sTo > 0)

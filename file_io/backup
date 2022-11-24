@@ -49,10 +49,8 @@ int create_file(const char *fromFi, char *toFi)
 		errz(101, NULL, NULL); /** error 101 */
 	}
 
-	i--;
 	while (bufz[i] != EOF)
 	{
-		i++;
 		while ((j = fgetc(oleFlz)) != EOF && i <= 1024)
 		{
 			bufz[i] = (char) j;
@@ -67,7 +65,6 @@ int create_file(const char *fromFi, char *toFi)
 		i = 0;
 		bufz[i] = (char) j;
 	}
-	i--;
 	writz = write(newzFlz, bufz, i);
 	return (0);
 }

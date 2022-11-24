@@ -10,7 +10,7 @@
 int main(int argc, char **argv)
 {
 	if (argc != 3)
-		errz(97, NULL);
+		errz(97, NULL, NULL);
 	else
 		create_file(argv[1], argv[2]);
 	return (0);
@@ -34,18 +34,23 @@ int create_file(const char *fromFi, char *toFi)
 	i = j = 0;
 	if (!oleFlz)
 	{
-		while (fromFi[i++])
-			bufz[i] = fromFi[i];
-		errz(98, bufz); /** error 98 */
+		__close(oleFlz, 0, NULL);
+		errz(98, fromFi, toFi); /** error 98 */
 	}
 
 	newzFlz = creat(toFi, 0664);
 	if (newzFlz == -1)
-		errz(99, toFi); /** error 99 */
+	{
+		__close(oleFlz, newzFlz, NULL);
+		errz(99, fromFi, toFi); /** error 99 */
+	}
 
 	bufz = malloc(sizeof(char) * 1024);
 	if (!bufz)
-		errz(100, NULL); /** error 100 */
+	{
+		__close(oleFlz, newzFlz, bufz);
+		errz(101, NULL, NULL); /** error 101 */
+	}
 
 	while (bufz[i] != EOF)
 	{
@@ -57,9 +62,8 @@ int create_file(const char *fromFi, char *toFi)
 		writz = write(newzFlz, bufz, i);
 		if (writz == -1)
 		{
-			close(oleFlz);
-			free(bufz);
-			errz(99, toFi); /** error 99 */
+			__close(oleFlz, newzFlz, bufz);
+			errz(99, fromFi, toFi); /** error 99 */
 		}
 		i = 0;
 		bufz[i] = (char) j;
@@ -73,7 +77,7 @@ int create_file(const char *fromFi, char *toFi)
  * @errCod: Error code
  * @msg: Extra info to print
  */
-void errz(int errCod, char *msg)
+void errz(int errCod, const char *oFi, char *nFi)
 {
 	switch (errCod)
 	{
@@ -81,16 +85,43 @@ void errz(int errCod, char *msg)
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	case 98:
-		dprintf(2, "Error: Can't read from file %s\n", msg);
+		dprintf(2, "Error: Can't read from file %s\n", oFi);
 		exit(98);
 	case 99:
-		dprintf(2, "Error: Can't write to %s\n", msg);
+		dprintf(2, "Error: Can't write to %s\n", nFi);
 		exit(99);
-	case 100:
-		dprintf(2, "Error assigning memory to heap");
-		exit(100);
+	case 101:
+		dprintf(2, "Error: Unable to assign memory to heap");
+		exit(101);
 	default:
 		dprintf(2, "Error: Unknown error");
-		exit(101);
+		exit (102);
 	}
+}
+
+/**
+ * __close - handles closing sd and errors
+ *
+ * @sFrm - 'fromFile' sd
+ * @sTo - 'toFile' sd
+ * @bufz - Buffer
+ */
+void __close(FILE *sFrm, int sTo, char *bufz)
+{
+	int i = 0;
+
+	if (bufz)
+		free(bufz);
+	if (sFrm)
+		i = fclose(sFrm);
+	if (i)
+		dprintf(2, "Error: Can't close fd");
+
+	if (sTo)
+		i = close(sTo);
+	if (i)
+		dprintf(2, "Error: Can't close fd %d", sTo);
+
+	if (i)
+		exit (100);
 }

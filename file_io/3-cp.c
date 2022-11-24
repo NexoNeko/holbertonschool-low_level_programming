@@ -7,10 +7,10 @@
  *
  * Return: 1 on success, error on failure
  */
-int main (int argc, char **argv)
+int main(int argc, char **argv)
 {
 	if (argc != 3)
-		errz(97);
+		errz(97, NULL);
 	else
 		create_file(argv[1], argv[2]);
 	return (1);
@@ -33,15 +33,19 @@ int create_file(const char *fromFi, char *toFi)
 
 	i = j = 0;
 	if (!oleFlz)
-		errz(98); /** error 98 */
+	{
+		while (fromFi[i++])
+			bufz[i] = fromFi[i];
+		errz(98, bufz); /** error 98 */
+	}
 
 	newzFlz = creat(toFi, 0664);
 	if (newzFlz == -1)
-		errz(99); /** error 99 */
+		errz(99, toFi); /** error 99 */
 
 	bufz = malloc(sizeof(char) * 1024);
 	if (!bufz)
-		errz(100); /** error 100 */
+		errz(100, NULL); /** error 100 */
 	while (bufz[i] != EOF)
 	{
 		while ((j = fgetc(oleFlz)) != EOF && i <= 1024)
@@ -51,7 +55,7 @@ int create_file(const char *fromFi, char *toFi)
 		}
 		writz = write(newzFlz, bufz, i);
 		if (writz == -1)
-			errz(99); /** error 99 */
+			errz(99, toFi); /** error 99 */
 		i = 0;
 		bufz[i] = (char) j;
 	}
@@ -63,26 +67,24 @@ int create_file(const char *fromFi, char *toFi)
  *
  * @a: Error code
  */
-void errz(int errCod)
+void errz(int errCod, char *msg)
 {
-	if (errCod == 97)
+	switch(errCod)
 	{
-		fprintf(stderr, "Usage: cp file_from file_to\n");
+	case 97:
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit (97);
-	}
-	if (errCod == 98)
-	{
-		fprintf(stderr, "Error: Can't read from file [TODO]\n");
+	case 98:
+		dprintf(2, "Error: Can't read from file %s\n", msg);
 		exit (98);
-	}
-	if (errCod == 99)
-	{
-		fprintf(stderr, "Error: Can't write to [todo]\n");
+	case 99:
+		dprintf(2, "Error: Can't write to %s\n", msg);
 		exit (99);
-	}
-        if (errCod == 100)
-	{
-		fprintf(stderr, "Error assigning memory to heap");
+	case 100:
+		dprintf(2, "Error assigning memory to heap");
 		exit (100);
+	default:
+		dprintf(2, "Error: Unknown error");
+		exit (101);
 	}
 }

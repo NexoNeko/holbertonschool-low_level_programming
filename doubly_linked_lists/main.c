@@ -1,25 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
+size_t _print_dlistint_backward(const dlistint_t *h);
+
 /**
- * main - check the code
+ * _free_dlist - Realease the memory allocated for a list
  *
- * Return: Always EXIT_SUCCESS.
+ * @head: A pointer to the first node of the list to free
+ */
+void _free_dlist(dlistint_t *head)
+{
+	if (head)
+	{
+		_free_dlist(head->next);
+		free(head);
+	}
+}
+
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-    dlistint_t *head;
+	dlistint_t *head;
+	int ints[2] = {
+		9,
+		6
+	};
+	dlistint_t *ptr;
+	int i;
+	size_t n;
 
-    head = NULL;
-    add_dnodeint_end(&head, 0);
-    add_dnodeint_end(&head, 1);
-    add_dnodeint_end(&head, 2);
-    add_dnodeint_end(&head, 3);
-    add_dnodeint_end(&head, 4);
-    add_dnodeint_end(&head, 98);
-    add_dnodeint_end(&head, 402);
-    add_dnodeint_end(&head, 1024);
-    print_dlistint(head);
-    printf("--------------\n");
-    _print_dlistint_backward(head);
-    return (EXIT_SUCCESS);
+	head = NULL;
+	for (i = 0; i < 2; ++i)
+	{
+		ptr = add_dnodeint_end(&head, ints[i]);
+		if (!ptr)
+		{
+			printf("Failed\n");
+			_free_dlist(head);
+			return (1);
+		}
+	}
+	n = print_dlistint(head);
+	printf("-> %lu elements\n", n);
+	n = _print_dlistint_backward(head);
+	printf("-> %lu elements\n", n);
+	_free_dlist(head);
+	return (0);
 }

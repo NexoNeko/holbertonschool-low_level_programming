@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * delete_nodeint_at_index - deletes the node at the specific index
+ * delete_dnodeint_at_index - deletes the node at the specific index
  *
  * @head: List to go through
  * @index: Nth of index in which to add the new node

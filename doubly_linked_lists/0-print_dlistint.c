@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * print_list - Prints all the values inside a linked list
+ * print_dlistint - Prints all the values inside a linked list
  *
  * @h: Head of list to print
  *

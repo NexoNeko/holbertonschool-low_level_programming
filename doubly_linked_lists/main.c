@@ -1,5 +1,6 @@
 #include "lists.h"
 
+
 /**
  * _free_dlist - Realease the memory allocated for a list
  *
@@ -22,16 +23,13 @@ void _free_dlist(dlistint_t *head)
 int main(void)
 {
 	dlistint_t *head;
-	int ints[2] = {
-		0,
-		9
-	};
+	int ints[5] = {10, 20, 30, 40, 50};
 	dlistint_t *ptr;
 	int i;
 	size_t n;
 
 	head = NULL;
-	for (i = 0; i < 2; ++i)
+	for (i = 0; i < 5; ++i)
 	{
 		ptr = add_dnodeint(&head, ints[i]);
 		if (!ptr)

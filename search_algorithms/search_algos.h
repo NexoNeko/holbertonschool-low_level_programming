@@ -1,7 +1,13 @@
 #ifndef SEARCH_ALGOS_H
 #define SEARCH_ALGOS_H
-#include <stddef.h>
+
+/**==================================*/
+/**========= header files ===========*/
+/**==================================*/
 #include <stdio.h>
+#include <stddef.h>
+
+
 /**==================================*/
 /**===== function signatures=========*/
 /**==================================*/

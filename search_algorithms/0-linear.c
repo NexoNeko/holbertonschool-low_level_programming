@@ -1,6 +1,6 @@
 #include "search_algos.h"
 
-/** 
+/**
  * linear_search - performs a linear search on an array
  *
  * @array: array in which to perform the search.
@@ -11,7 +11,7 @@
  */
 int linear_search(int *array, size_t size, int value)
 {
-	long unsigned int i;
+	unsigned long int i;
 
 	if (!array)
 		return (-1);

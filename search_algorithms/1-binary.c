@@ -33,23 +33,3 @@ int binary_search(int *array, size_t size, int value)
 	}
 	return (-1);
 }
-
-void print_array(int *array, int size)
-{
-	int i, size_max;
-
-	size_max = size;
-	size -= 1;
-	if (size < 0)
-		putchar('\n');
-	else
-	for (i = 0; size > -1; size--)
-	{
-		printf("%d", array[i]);
-		i++;
-		if (i < size_max)
-			printf(", ");
-		else
-			putchar('\n');
-	}
-}

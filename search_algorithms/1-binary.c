@@ -1,5 +1,14 @@
 #include "search_algos.h"
 
+/**
+ * binary_search - Performs a binary search on a given array
+ *
+ * @array: The array to perform the search on
+ * @size: Size of the array we're searching
+ * @value: Value we're searching for
+ *
+ * @Return: Index where value was found
+*/
 int binary_search(int *array, size_t size, int value)
 {
 	unsigned long int middle = 0;

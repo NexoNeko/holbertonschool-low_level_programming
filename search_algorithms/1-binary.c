@@ -2,47 +2,38 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-	unsigned long int middle;
+	unsigned long int middle = 0;
+	unsigned long int high = size - 1;
+	unsigned long int low = 0;
 	unsigned long int i;
 
 	if (!array)
 		return (-1);
 
-	printf("Searching in array: ");
-	print_array(array, size);
+	while (low <= high)
+	{
+		middle = (high + low) / 2;
 
-	middle = (size - 1) / 2;
-
-	if (array[middle] == value)
-		return (value);
-
-	if (array[middle] > value)
-		for (i = 0; i < size - 1; i++)
+		printf("Searching in array: ");
+		for (i = low; i <= high; ++i)
 		{
-			printf("Searching in array: ");
-			print_array(&array[middle], size - middle);
-			if (array[i] == value)
-				return ((int)i);
+			if (i != low)
+				printf(", %d", array[i]);
+			else
+				printf("%d", array[i]);
 		}
-	else
-		for (i = size - 1; i > 0; i--)
-		{
-			printf("Searching in array: ");
-			print_array(&array[middle], size - middle);
-			if (array[i] == value)
-				return ((int)i);
-		}
+		printf("\n");
+
+		if (array[middle] < value)
+			low = middle + 1;
+		else if (array[middle] > value)
+			high = middle - 1;
+		else
+			return(middle);
+	}
 	return (-1);
 }
 
-/**
- * print_array - Prints N elements of an array of integers
- *
- * @a: The array to be printed
- * @n: The number of integers to be printed
- *
- * Return: void
- */
 void print_array(int *array, int size)
 {
 	int i, size_max;

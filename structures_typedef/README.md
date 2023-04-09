@@ -1,1 +1,3 @@
-Work on structs
+# Structures and typedef
+
+Structures and typedef exercises

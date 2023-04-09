@@ -1,1 +1,3 @@
-The exercises in this directory will be dealing with recursion.
+# Recursion
+
+Recursion exercises

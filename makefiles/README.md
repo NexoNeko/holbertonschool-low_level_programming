@@ -1,1 +1,3 @@
-Now we will explore the makefile rules and behavior.
+# Makefiles
+
+Makefile exercises

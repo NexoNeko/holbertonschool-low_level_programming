@@ -1,1 +1,3 @@
-Exercises on the preprocessor and such, that is, macro expansion.
+# Preprocessor
+
+Preprocessor exercises

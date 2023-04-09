@@ -1,1 +1,3 @@
-Search algorithm exercises for holberton school.
+# Search algorithms
+
+Search algorithm exercises

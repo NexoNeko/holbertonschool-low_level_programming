@@ -1,1 +1,3 @@
-Exercises on pointers, arrays and strings for Holberton School.
+# Pointers arrays and strings
+
+Pointers arrays and strings exercises.
